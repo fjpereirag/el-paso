@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="es" data-variant="pastoral" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>El paso · De Egipto a la Tierra Prometida</title>
+<meta name="description" content="Un itinerario de fe en cuatro etapas sobre el mapa del Éxodo: la buena noticia, la cruz, el desierto y la comunidad. Con cita bíblica y una pregunta para la oración.">
+<meta name="theme-color" content="#0B0A08">
+<meta property="og:type" content="website">
+<meta property="og:title" content="El paso · De Egipto a la Tierra Prometida">
+<meta property="og:description" content="Cuatro etapas sobre el mapa del Éxodo. Una palabra de la Escritura y una pregunta para quedarte en silencio.">
+<meta property="og:image" content="og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="modulepreload" href="js/three.module.min.js">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#prologo">Saltar al contenido</a>
+
+<!-- Escena 3D fija (respaldo SVG si no hay WebGL) -->
+<div class="stage" aria-hidden="true">
+  <canvas id="mapa3d"></canvas>
+  <div class="stage__fallback"><svg viewBox="0 0 200 200" class="mapa-svg"><use href="#mapa"/></svg></div>
+  <div class="stage__veil"></div>
+  <div class="labels" id="labels"></div>
+</div>
+
+<header class="top">
+  <a class="top__brand" href="#inicio">El paso</a>
+  <nav class="top__nav" aria-label="Etapas">
+    <ol>
+      <li><a href="#etapa-1" data-dot="1"><span class="rn">I</span><span class="nm">Egipto</span></a></li>
+      <li><a href="#etapa-2" data-dot="2"><span class="rn">II</span><span class="nm">Mar Rojo</span></a></li>
+      <li><a href="#etapa-3" data-dot="3"><span class="rn">III</span><span class="nm">Desierto</span></a></li>
+      <li><a href="#etapa-4" data-dot="4"><span class="rn">IV</span><span class="nm">Tierra</span></a></li>
+    </ol>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="inicio" data-cam="overview">
+    <p class="eyebrow reveal">Un itinerario de fe en cuatro etapas</p>
+    <h1 class="hero__title"><span class="line"><span>El paso</span></span></h1>
+    <p class="hero__sub reveal">De Egipto a la Tierra Prometida</p>
+    <a class="hero__cue" href="#prologo"><span>Ponte en camino</span><i></i></a>
+  </section>
+
+  <!-- PRÓLOGO -->
+  <section class="prologo" id="prologo" data-cam="overview">
+    <div class="prologo__inner">
+      <p class="cap reveal"><span class="drop">P</span>ésaj significa <em>«paso»</em>. Israel lo vivió una noche, con las sandalias puestas y el bastón en la mano. La Iglesia lo celebra en la Pascua de Cristo. Y cada uno de nosotros está llamado a vivirlo: salir de lo que nos esclaviza y atravesar, de la mano de Dios, hasta la tierra de la libertad.</p>
+      <p class="reveal muted">Cuatro etapas sobre el mapa. En cada una, un lugar, una palabra de la Escritura y una pregunta para quedarte un rato en silencio.</p>
+    </div>
+  </section>
+
+  <!-- ETAPA I -->
+  <section class="etapa" id="etapa-1" data-cam="station" data-station="0">
+    <div class="etapa__head">
+      <span class="etapa__rn">I</span>
+      <p class="etapa__lugar">Egipto · Ramsés</p>
+    </div>
+    <article class="panel">
+      <p class="panel__kicker">Etapa I · La esclavitud y la buena noticia</p>
+      <h2 class="panel__title">Una buena noticia para el esclavo</h2>
+      <p>Vivimos más conectados que nunca y, sin embargo, muchos se sienten solos. Tenemos de todo y nos falta lo esencial: una respuesta ante el dolor, la culpa y la muerte. Como Israel en Egipto, levantamos ciudades para otros faraones: el dinero, el éxito, el qué dirán, la comodidad, el poder. Prometen libertad y dejan el alma cansada.</p>
+      <p>A ese hombre —a ti, a mí— se dirige el <em>kerigma</em>: no una norma más ni un esfuerzo para ganarse a Dios, sino un anuncio. Dios te ama tal como eres, en tu debilidad y en tu pecado. Jesucristo ha muerto y ha resucitado para perdonarte y arrancarte de la muerte.</p>
+      <p>No es una conquista: es un regalo. Y nos alcanzó cuando todavía éramos enemigos suyos; por eso nos hace capaces de perdonar a quien nos ha herido.</p>
+      <blockquote class="cita">
+        <p>«He visto la opresión de mi pueblo en Egipto y he oído sus quejas contra los opresores; conozco sus sufrimientos».</p>
+        <cite>Éxodo 3, 7</cite>
+      </blockquote>
+      <p class="eco">«Dios nos demostró su amor en que, siendo nosotros todavía pecadores, Cristo murió por nosotros». <cite>Romanos 5, 8</cite></p>
+      <div class="pausa">
+        <p class="pausa__label">Para la oración</p>
+        <p class="pausa__q">¿Qué «faraón» levanta hoy ladrillos en mi vida? ¿Me atrevo a creer que Dios me ama ahí, antes de que yo cambie?</p>
+      </div>
+      <div class="acciones">
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=%C3%89xodo+3&amp;version=BLP" target="_blank" rel="noopener">Leer Éxodo 3</a>
+        <button class="btn btn--ghost" data-share="1" type="button">Compartir por WhatsApp</button>
+      </div>
+    </article>
+  </section>
+
+  <div class="tramo" data-cam="travel"><p class="reveal">«Los israelitas partieron de Ramsés hacia Sucot».<cite>Éxodo 12, 37</cite></p></div>
+
+  <!-- ETAPA II · momento firma -->
+  <section class="etapa etapa--firma" id="etapa-2" data-cam="station" data-station="1">
+    <div class="etapa__head etapa__head--sticky">
+      <span class="etapa__rn">II</span>
+      <p class="etapa__lugar">El mar Rojo</p>
+      <p class="etapa__hint">Sigue bajando: el mar se abre</p>
+    </div>
+    <article class="panel">
+      <p class="panel__kicker">Etapa II · El sufrimiento y la cruz</p>
+      <h2 class="panel__title">La cruz, un camino abierto en el mar</h2>
+      <p>Delante, el mar; detrás, los carros del faraón. Es la imagen de nuestra impotencia: la enfermedad, la muerte de alguien querido, la injusticia, el fracaso. Ante el dolor nos rebelamos —¿por qué, Señor?— o huimos hacia la evasión, la amargura o el resentimiento.</p>
+      <p>La fe no ofrece una teoría sobre el mal. Ofrece algo más grande: Dios no mira el sufrimiento desde lejos. En la cruz de Cristo entra en él, carga con nuestro pecado y nuestro dolor, y lo convierte en el lugar donde nos ama sin condiciones.</p>
+      <p>Así la cruz propia cambia de sentido: de la queja a la ofrenda. Unidos a Cristo, que perdonó desde el madero, también nosotros podemos perdonar. Y descubrimos que la cruz no es el final, sino el paso: es Dios quien abre el mar.</p>
+      <blockquote class="cita">
+        <p>«No tengáis miedo; estad firmes y veréis la victoria que el Señor os va a conceder hoy. […] El Señor peleará por vosotros; vosotros esperad tranquilos».</p>
+        <cite>Éxodo 14, 13-14</cite>
+      </blockquote>
+      <p class="eco">«Padre, perdónalos, porque no saben lo que hacen». <cite>Lucas 23, 34</cite></p>
+      <div class="pausa">
+        <p class="pausa__label">Para la oración</p>
+        <p class="pausa__q">¿Cuál es hoy mi mar Rojo, el sufrimiento que no sé atravesar? ¿Puedo dejar de pelear solo y esperar tranquilo a que el Señor abra camino?</p>
+      </div>
+      <div class="acciones">
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=%C3%89xodo+14&amp;version=BLP" target="_blank" rel="noopener">Leer Éxodo 14</a>
+        <button class="btn btn--ghost" data-share="2" type="button">Compartir por WhatsApp</button>
+      </div>
+    </article>
+  </section>
+
+  <div class="tramo" data-cam="travel"><p class="reveal">«Moisés hizo partir a Israel del mar Rojo, y salieron hacia el desierto».<cite>Éxodo 15, 22</cite></p></div>
+
+  <!-- ETAPA III -->
+  <section class="etapa" id="etapa-3" data-cam="station" data-station="2">
+    <div class="etapa__head">
+      <span class="etapa__rn">III</span>
+      <p class="etapa__lugar">El desierto · Monte Sinaí</p>
+    </div>
+    <article class="panel">
+      <p class="panel__kicker">Etapa III · La conversión</p>
+      <h2 class="panel__title">Del miedo del esclavo a la libertad del hijo</h2>
+      <p>Libre de Egipto, Israel no entra enseguida en la tierra: atraviesa el desierto. Allí caen las caretas. Sin agua ni pan aparecen la murmuración, la desconfianza, la nostalgia de las cebollas de Egipto. A veces preferimos la seguridad de nuestras esclavitudes a la intemperie de la libertad.</p>
+      <p>Pero el desierto es también el lugar del maná y del agua de la roca. Dios alimenta a su pueblo día a día y le enseña a depender de él. La Iglesia ha visto ahí la Eucaristía: Cristo, pan del cielo para el camino.</p>
+      <p>Convertirse no es portarse bien por miedo al castigo o por interés en el premio. Es pasar de esclavo a hijo: obedecer por amor, con la gratitud de quien se sabe perdonado.</p>
+      <blockquote class="cita">
+        <p>«Recuerda el camino que el Señor, tu Dios, te ha hecho recorrer estos cuarenta años por el desierto […] para que supieras que no solo de pan vive el hombre, sino de todo cuanto sale de la boca de Dios».</p>
+        <cite>Deuteronomio 8, 2-3</cite>
+      </blockquote>
+      <p class="eco">«No habéis recibido un espíritu de esclavitud, para recaer en el temor, sino un Espíritu de hijos de adopción, en el que clamamos: “¡Abba, Padre!”». <cite>Romanos 8, 15</cite></p>
+      <div class="pausa">
+        <p class="pausa__label">Para la oración</p>
+        <p class="pausa__q">¿Qué careta me está quitando el desierto? ¿Vivo mi fe como un esclavo que teme o como un hijo que se sabe querido?</p>
+      </div>
+      <div class="acciones">
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=Deuteronomio+8&amp;version=BLP" target="_blank" rel="noopener">Leer Deuteronomio 8</a>
+        <button class="btn btn--ghost" data-share="3" type="button">Compartir por WhatsApp</button>
+      </div>
+    </article>
+  </section>
+
+  <div class="tramo" data-cam="travel"><p class="reveal">«El Señor, tu Dios, te conduce a una tierra buena».<cite>Deuteronomio 8, 7</cite></p></div>
+
+  <!-- ETAPA IV -->
+  <section class="etapa" id="etapa-4" data-cam="station" data-station="3">
+    <div class="etapa__head">
+      <span class="etapa__rn">IV</span>
+      <p class="etapa__lugar">La Tierra Prometida · Jericó</p>
+    </div>
+    <article class="panel">
+      <p class="panel__kicker">Etapa IV · La comunidad y la Iglesia</p>
+      <h2 class="panel__title">«Mirad cómo se aman»</h2>
+      <p>La tierra prometida no es un lugar para vivir solo. En una sociedad masificada y aislada, la fe necesita encarnarse en un pequeño grupo de hermanos, como aquellas primeras comunidades que hacían decir a los paganos: «Mirad cómo se aman».</p>
+      <p>Son hermanos que no hemos elegido por afinidad, sino que Dios nos da. Con el tiempo salen a la luz los defectos de cada uno y se rompe la imagen ideal que teníamos de nosotros y de los demás. Justo ahí empieza lo bueno: ser conocido en la propia miseria y, aun así, ser amado y perdonado.</p>
+      <p>La comunidad es un taller de perdón, y la Iglesia, la casa donde el amor al enemigo se vuelve posible. Ese es el fruto del paso: una vida sin miedo a la muerte que ya anticipa el Reino.</p>
+      <blockquote class="cita">
+        <p>«Ved qué dulzura, qué delicia, convivir los hermanos unidos».</p>
+        <cite>Salmo 133, 1</cite>
+      </blockquote>
+      <p class="eco">«En esto conocerán todos que sois discípulos míos: si os amáis unos a otros». <cite>Juan 13, 35</cite></p>
+      <div class="pausa">
+        <p class="pausa__label">Para la oración</p>
+        <p class="pausa__q">¿Quiénes son los hermanos que Dios me ha dado sin que yo los eligiera? ¿A quién necesito perdonar, o pedir perdón, para entrar en la tierra?</p>
+      </div>
+      <div class="acciones">
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=Hechos+2%3A42-47&amp;version=BLP" target="_blank" rel="noopener">Leer Hechos 2, 42-47</a>
+        <button class="btn btn--ghost" data-share="4" type="button">Compartir por WhatsApp</button>
+      </div>
+    </article>
+  </section>
+
+  <div class="tramo" data-cam="travel"><p class="reveal">«Todo Israel fue pasando por el cauce seco, hasta que el pueblo terminó de pasar el Jordán».<cite>Josué 3, 17</cite></p></div>
+
+  <!-- FINAL -->
+  <section class="final" id="final" data-cam="end">
+    <div class="final__inner">
+      <p class="eyebrow reveal">Pascua</p>
+      <h2 class="final__title reveal">El paso continúa</h2>
+      <p class="reveal">El camino de Israel es también el tuyo. Cada vez que algo te esclaviza, cada vez que el mar parece cerrado, cada vez que el desierto te desnuda, Dios vuelve a abrir el paso. Y al otro lado te esperan unos hermanos.</p>
+      <figure class="final__mapa reveal">
+        <svg viewBox="0 0 200 200" class="mapa-svg" role="img" aria-labelledby="mapa-t"><title id="mapa-t">Mapa ilustrado del Éxodo con las cuatro etapas</title><use href="#mapa"/></svg>
+        <ol class="final__index">
+          <li><a href="#etapa-1"><span class="rn">I</span> Egipto · La buena noticia</a></li>
+          <li><a href="#etapa-2"><span class="rn">II</span> Mar Rojo · La cruz</a></li>
+          <li><a href="#etapa-3"><span class="rn">III</span> Desierto · La conversión</a></li>
+          <li><a href="#etapa-4"><span class="rn">IV</span> Tierra · La comunidad</a></li>
+        </ol>
+      </figure>
+      <div class="acciones acciones--center">
+        <button class="btn" data-share="0" type="button">Compartir el camino por WhatsApp</button>
+        <a class="btn btn--ghost" href="#inicio">Volver al inicio</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <p class="pie__firma">Parroquia de Santa Casilda · Carabanchel, Madrid</p>
+  <p>Itinerario de reflexión personal sobre los grandes temas del anuncio cristiano. Textos bíblicos: Sagrada Biblia, versión oficial de la Conferencia Episcopal Española.</p>
+</footer>
+
+<!-- Mapa ilustrado (SVG reutilizable: respaldo y mapa final). Coordenadas: x,z ∈ [-10,10] → ×10+100 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mapa" viewBox="0 0 200 200">
+      <rect width="200" height="200" fill="#0f1b20"/>
+      <!-- Relieve y mares: los pinta js/main.js con la misma geografía que el 3D -->
+      <image id="mapa-img" x="0" y="0" width="200" height="200" href=""/>
+      <!-- Ruta y estaciones (las genera js/main.js con las mismas coordenadas que el 3D) -->
+      <path id="ruta-svg" d="" stroke="#C9A35B" stroke-width="1.6" stroke-dasharray="3 3" fill="none"/>
+      <g id="st-svg" font-family="Cormorant Garamond, Georgia, serif" font-size="10" font-weight="600" fill="#F2EBDD" text-anchor="middle"></g>
+      <g font-family="Source Serif 4, Georgia, serif" font-size="6" fill="#A89F8C" font-style="italic">
+        <text x="20" y="22">Mar Grande</text>
+        <text x="8" y="110">Egipto</text>
+        <text x="104" y="128">Sinaí</text>
+        <text x="160" y="96">Edom</text>
+        <text x="150" y="22">Canaán</text>
+        <text x="122" y="196">Mar Rojo</text>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
