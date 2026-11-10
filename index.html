@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>El paso · De Egipto a la Tierra Prometida</title>
-<meta name="description" content="Un itinerario de fe en cuatro etapas sobre el mapa del Éxodo: la buena noticia, la cruz, el desierto y la comunidad. Con cita bíblica y una pregunta para la oración.">
+<meta name="description" content="Un itinerario de fe en nueve etapas sobre el mapa del Éxodo: la buena noticia, la cruz, el desierto y la comunidad. Con cita bíblica y una pregunta para la oración.">
 <meta name="theme-color" content="#0B0A08">
 <meta property="og:type" content="website">
 <meta property="og:title" content="El paso · De Egipto a la Tierra Prometida">
-<meta property="og:description" content="Cuatro etapas sobre el mapa del Éxodo. Una palabra de la Escritura y una pregunta para quedarte en silencio.">
+<meta property="og:description" content="Nueve etapas sobre el mapa del Éxodo. Una palabra de la Escritura y una pregunta para quedarte en silencio.">
 <meta property="og:image" content="og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -33,12 +33,18 @@
 
 <header class="top">
   <a class="top__brand" href="#inicio">El paso</a>
-  <nav class="top__nav" aria-label="Etapas">
+  <button class="top__btn" type="button" aria-expanded="false" aria-controls="menu-etapas"><span class="top__cur" id="etapa-actual">Etapas</span><i aria-hidden="true"></i></button>
+  <nav class="top__nav" id="menu-etapas" aria-label="Etapas" hidden>
     <ol>
-      <li><a href="#etapa-1" data-dot="1"><span class="rn">I</span><span class="nm">Egipto</span></a></li>
-      <li><a href="#etapa-2" data-dot="2"><span class="rn">II</span><span class="nm">Mar Rojo</span></a></li>
-      <li><a href="#etapa-3" data-dot="3"><span class="rn">III</span><span class="nm">Desierto</span></a></li>
-      <li><a href="#etapa-4" data-dot="4"><span class="rn">IV</span><span class="nm">Tierra</span></a></li>
+        <li><a href="#etapa-1" data-dot="1"><span class="rn">I</span><span class="nm">Egipto</span></a></li>
+        <li><a href="#etapa-2" data-dot="2"><span class="rn">II</span><span class="nm">Mar Rojo</span></a></li>
+        <li><a href="#etapa-3" data-dot="3"><span class="rn">III</span><span class="nm">Mara</span></a></li>
+        <li><a href="#etapa-4" data-dot="4"><span class="rn">IV</span><span class="nm">El maná</span></a></li>
+        <li><a href="#etapa-5" data-dot="5"><span class="rn">V</span><span class="nm">Refidim</span></a></li>
+        <li><a href="#etapa-6" data-dot="6"><span class="rn">VI</span><span class="nm">Sinaí</span></a></li>
+        <li><a href="#etapa-7" data-dot="7"><span class="rn">VII</span><span class="nm">La serpiente</span></a></li>
+        <li><a href="#etapa-8" data-dot="8"><span class="rn">VIII</span><span class="nm">Nebo</span></a></li>
+        <li><a href="#etapa-9" data-dot="9"><span class="rn">IX</span><span class="nm">La tierra</span></a></li>
     </ol>
   </nav>
 </header>
@@ -46,7 +52,7 @@
 <main>
   <!-- HERO -->
   <section class="hero" id="inicio" data-cam="overview">
-    <p class="eyebrow reveal">Un itinerario de fe en cuatro etapas</p>
+    <p class="eyebrow reveal">Un itinerario de fe en nueve etapas</p>
     <h1 class="hero__title"><span class="line"><span>El paso</span></span></h1>
     <p class="hero__sub reveal">De Egipto a la Tierra Prometida</p>
     <a class="hero__cue" href="#prologo"><span>Ponte en camino</span><i></i></a>
@@ -56,7 +62,7 @@
   <section class="prologo" id="prologo" data-cam="overview">
     <div class="prologo__inner">
       <p class="cap reveal"><span class="drop">P</span>ésaj significa <em>«paso»</em>. Israel lo vivió una noche, con las sandalias puestas y el bastón en la mano. La Iglesia lo celebra en la Pascua de Cristo. Y cada uno de nosotros está llamado a vivirlo: salir de lo que nos esclaviza y atravesar, de la mano de Dios, hasta la tierra de la libertad.</p>
-      <p class="reveal muted">Cuatro etapas sobre el mapa. En cada una, un lugar, una palabra de la Escritura y una pregunta para quedarte un rato en silencio.</p>
+      <p class="reveal muted">Nueve etapas sobre el mapa. En cada una, un lugar, una palabra de la Escritura y una pregunta para quedarte un rato en silencio.</p>
     </div>
   </section>
 
@@ -82,7 +88,7 @@
         <p class="pausa__q">¿Qué «faraón» levanta hoy ladrillos en mi vida? ¿Me atrevo a creer que Dios me ama ahí, antes de que yo cambie?</p>
       </div>
       <div class="acciones">
-        <a class="btn" href="https://www.biblegateway.com/passage/?search=%C3%89xodo+3&amp;version=BLP" target="_blank" rel="noopener">Leer Éxodo 3</a>
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=Éxodo+3&amp;version=BLP" target="_blank" rel="noopener">Leer Éxodo 3</a>
         <button class="btn btn--ghost" data-share="1" type="button">Compartir por WhatsApp</button>
       </div>
     </article>
@@ -90,7 +96,7 @@
 
   <div class="tramo" data-cam="travel"><p class="reveal">«Los israelitas partieron de Ramsés hacia Sucot».<cite>Éxodo 12, 37</cite></p></div>
 
-  <!-- ETAPA II · momento firma -->
+  <!-- ETAPA II -->
   <section class="etapa etapa--firma" id="etapa-2" data-cam="station" data-station="1">
     <div class="etapa__head etapa__head--sticky">
       <span class="etapa__rn">II</span>
@@ -98,70 +104,221 @@
       <p class="etapa__hint">Sigue bajando: el mar se abre</p>
     </div>
     <article class="panel">
-      <p class="panel__kicker">Etapa II · El sufrimiento y la cruz</p>
-      <h2 class="panel__title">La cruz, un camino abierto en el mar</h2>
-      <p>Delante, el mar; detrás, los carros del faraón. Es la imagen de nuestra impotencia: la enfermedad, la muerte de alguien querido, la injusticia, el fracaso. Ante el dolor nos rebelamos —¿por qué, Señor?— o huimos hacia la evasión, la amargura o el resentimiento.</p>
+      <p class="panel__kicker">Etapa II · El paso por el mar</p>
+      <h2 class="panel__title">Es Dios quien abre el mar</h2>
+      <p>Delante, el mar; detrás, los carros del faraón. Es la imagen de nuestra impotencia: la enfermedad, la muerte de alguien querido, la injusticia, el pecado del que no logramos salir. Nadie se libera a sí mismo a fuerza de voluntad; tarde o temprano, fracasa.</p>
       <p>La fe no ofrece una teoría sobre el mal. Ofrece algo más grande: Dios no mira el sufrimiento desde lejos. En la cruz de Cristo entra en él, carga con nuestro pecado y nuestro dolor, y lo convierte en el lugar donde nos ama sin condiciones.</p>
-      <p>Así la cruz propia cambia de sentido: de la queja a la ofrenda. Unidos a Cristo, que perdonó desde el madero, también nosotros podemos perdonar. Y descubrimos que la cruz no es el final, sino el paso: es Dios quien abre el mar.</p>
+      <p>Por eso la Iglesia ha visto en el mar Rojo el Bautismo y la Pascua: Cristo baja a las aguas de la muerte y abre un camino donde no lo había. No cruzamos por nuestros méritos, sino sostenidos por la gracia.</p>
       <blockquote class="cita">
         <p>«No tengáis miedo; estad firmes y veréis la victoria que el Señor os va a conceder hoy. […] El Señor peleará por vosotros; vosotros esperad tranquilos».</p>
         <cite>Éxodo 14, 13-14</cite>
       </blockquote>
-      <p class="eco">«Padre, perdónalos, porque no saben lo que hacen». <cite>Lucas 23, 34</cite></p>
+      <p class="eco">«Por el bautismo fuimos sepultados con él en la muerte, para que, lo mismo que Cristo resucitó de entre los muertos por la gloria del Padre, así también nosotros andemos en una vida nueva». <cite>Romanos 6, 4</cite></p>
       <div class="pausa">
         <p class="pausa__label">Para la oración</p>
-        <p class="pausa__q">¿Cuál es hoy mi mar Rojo, el sufrimiento que no sé atravesar? ¿Puedo dejar de pelear solo y esperar tranquilo a que el Señor abra camino?</p>
+        <p class="pausa__q">¿Cuál es hoy mi mar Rojo, lo que no sé atravesar? ¿Puedo dejar de pelear solo y esperar tranquilo a que el Señor abra camino?</p>
       </div>
       <div class="acciones">
-        <a class="btn" href="https://www.biblegateway.com/passage/?search=%C3%89xodo+14&amp;version=BLP" target="_blank" rel="noopener">Leer Éxodo 14</a>
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=Éxodo+14&amp;version=BLP" target="_blank" rel="noopener">Leer Éxodo 14</a>
         <button class="btn btn--ghost" data-share="2" type="button">Compartir por WhatsApp</button>
       </div>
     </article>
   </section>
 
-  <div class="tramo" data-cam="travel"><p class="reveal">«Moisés hizo partir a Israel del mar Rojo, y salieron hacia el desierto».<cite>Éxodo 15, 22</cite></p></div>
+  <div class="tramo" data-cam="travel"><p class="reveal">«Moisés hizo partir a Israel del mar Rojo, y salieron hacia el desierto. Caminaron tres días sin encontrar agua».<cite>Éxodo 15, 22</cite></p></div>
 
   <!-- ETAPA III -->
   <section class="etapa" id="etapa-3" data-cam="station" data-station="2">
     <div class="etapa__head">
       <span class="etapa__rn">III</span>
-      <p class="etapa__lugar">El desierto · Monte Sinaí</p>
+      <p class="etapa__lugar">Mara · Las aguas amargas</p>
     </div>
     <article class="panel">
-      <p class="panel__kicker">Etapa III · La conversión</p>
-      <h2 class="panel__title">Del miedo del esclavo a la libertad del hijo</h2>
-      <p>Libre de Egipto, Israel no entra enseguida en la tierra: atraviesa el desierto. Allí caen las caretas. Sin agua ni pan aparecen la murmuración, la desconfianza, la nostalgia de las cebollas de Egipto. A veces preferimos la seguridad de nuestras esclavitudes a la intemperie de la libertad.</p>
-      <p>Pero el desierto es también el lugar del maná y del agua de la roca. Dios alimenta a su pueblo día a día y le enseña a depender de él. La Iglesia ha visto ahí la Eucaristía: Cristo, pan del cielo para el camino.</p>
-      <p>Convertirse no es portarse bien por miedo al castigo o por interés en el premio. Es pasar de esclavo a hijo: obedecer por amor, con la gratitud de quien se sabe perdonado.</p>
+      <p class="panel__kicker">Etapa III · El sufrimiento y la cruz</p>
+      <h2 class="panel__title">Un madero que endulza el agua</h2>
+      <p>Tres días después del milagro, la sed. Llegan a Mara y el agua es amarga. Y el pueblo, que acaba de ver abrirse el mar, murmura. Así somos: ante el dolor nos rebelamos —¿por qué, Señor?— o huimos hacia la evasión, la queja o el resentimiento contra Dios y contra los demás.</p>
+      <p>Dios no seca el pozo ni cambia de lugar al pueblo: muestra a Moisés un madero, Moisés lo echa en el agua y el agua se vuelve dulce. Los Padres de la Iglesia vieron ahí la cruz de Cristo, que no suprime nuestras cruces, pero les cambia el sabor.</p>
+      <p>Unida a la suya, la cruz propia —la enfermedad, el fracaso, la incomprensión, la vejez— deja de ser un castigo absurdo. Pasa de la queja a la ofrenda. Y como Cristo perdonó desde el madero, también nosotros, sostenidos por la gracia, podemos perdonar a quien nos hiere.</p>
       <blockquote class="cita">
-        <p>«Recuerda el camino que el Señor, tu Dios, te ha hecho recorrer estos cuarenta años por el desierto […] para que supieras que no solo de pan vive el hombre, sino de todo cuanto sale de la boca de Dios».</p>
-        <cite>Deuteronomio 8, 2-3</cite>
+        <p>«Llegaron a Mara, pero no pudieron beber el agua, porque era amarga. […] Moisés clamó al Señor y el Señor le mostró una madera; la echó en el agua y el agua se volvió dulce».</p>
+        <cite>Éxodo 15, 23.25</cite>
       </blockquote>
-      <p class="eco">«No habéis recibido un espíritu de esclavitud, para recaer en el temor, sino un Espíritu de hijos de adopción, en el que clamamos: “¡Abba, Padre!”». <cite>Romanos 8, 15</cite></p>
+      <p class="eco">«Padre, perdónalos, porque no saben lo que hacen». <cite>Lucas 23, 34</cite></p>
       <div class="pausa">
         <p class="pausa__label">Para la oración</p>
-        <p class="pausa__q">¿Qué careta me está quitando el desierto? ¿Vivo mi fe como un esclavo que teme o como un hijo que se sabe querido?</p>
+        <p class="pausa__q">¿Qué agua amarga hay en mi historia —una herida, un rencor, una cruz que rechazo— donde necesito que Cristo eche su madero?</p>
       </div>
       <div class="acciones">
-        <a class="btn" href="https://www.biblegateway.com/passage/?search=Deuteronomio+8&amp;version=BLP" target="_blank" rel="noopener">Leer Deuteronomio 8</a>
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=Éxodo+15%3A22-27&amp;version=BLP" target="_blank" rel="noopener">Leer Éxodo 15, 22-27</a>
         <button class="btn btn--ghost" data-share="3" type="button">Compartir por WhatsApp</button>
       </div>
     </article>
   </section>
 
-  <div class="tramo" data-cam="travel"><p class="reveal">«El Señor, tu Dios, te conduce a una tierra buena».<cite>Deuteronomio 8, 7</cite></p></div>
+  <div class="tramo" data-cam="travel"><p class="reveal">«Partieron de Elim, y toda la comunidad de los hijos de Israel llegó al desierto de Sin».<cite>Éxodo 16, 1</cite></p></div>
 
   <!-- ETAPA IV -->
   <section class="etapa" id="etapa-4" data-cam="station" data-station="3">
     <div class="etapa__head">
       <span class="etapa__rn">IV</span>
-      <p class="etapa__lugar">La Tierra Prometida · Jericó</p>
+      <p class="etapa__lugar">El desierto de Sin</p>
     </div>
     <article class="panel">
-      <p class="panel__kicker">Etapa IV · La comunidad y la Iglesia</p>
+      <p class="panel__kicker">Etapa IV · El maná de cada día</p>
+      <h2 class="panel__title">Pan del cielo para el camino</h2>
+      <p>Pasa un mes y se acaba la comida. Entonces aparece la nostalgia de Egipto: de la olla de carne, del pan hasta hartarse. La esclavitud tiene un atractivo peligroso; a veces preferimos la seguridad de nuestras dependencias a la intemperie de la libertad.</p>
+      <p>Dios responde con un pan que no se puede acumular. Cada mañana, el maná justo para ese día; lo que se guarda se echa a perder. Así enseña a su pueblo a fiarse, a vivir de su providencia día a día, a no vivir solo de pan.</p>
+      <p>La Iglesia reconoce en el maná la Eucaristía: Cristo mismo, pan bajado del cielo, alimento para atravesar el desierto de la vida sin volver a Egipto.</p>
+      <blockquote class="cita">
+        <p>«Yo haré llover pan del cielo para vosotros: que el pueblo salga a recoger la ración de cada día».</p>
+        <cite>Éxodo 16, 4</cite>
+      </blockquote>
+      <p class="eco">«Yo soy el pan vivo que ha bajado del cielo; el que coma de este pan vivirá para siempre». <cite>Juan 6, 51</cite></p>
+      <div class="pausa">
+        <p class="pausa__label">Para la oración</p>
+        <p class="pausa__q">¿Qué «ollas de Egipto» echo de menos cuando el camino se hace duro? ¿Me fío de Dios para el día de hoy, sin querer asegurar el de mañana?</p>
+      </div>
+      <div class="acciones">
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=Éxodo+16&amp;version=BLP" target="_blank" rel="noopener">Leer Éxodo 16</a>
+        <button class="btn btn--ghost" data-share="4" type="button">Compartir por WhatsApp</button>
+      </div>
+    </article>
+  </section>
+
+  <div class="tramo" data-cam="travel"><p class="reveal">«Acamparon en Refidim, donde el pueblo no encontró agua para beber».<cite>Éxodo 17, 1</cite></p></div>
+
+  <!-- ETAPA V -->
+  <section class="etapa" id="etapa-5" data-cam="station" data-station="4">
+    <div class="etapa__head">
+      <span class="etapa__rn">V</span>
+      <p class="etapa__lugar">Refidim · Masá y Meribá</p>
+    </div>
+    <article class="panel">
+      <p class="panel__kicker">Etapa V · La prueba del desierto</p>
+      <h2 class="panel__title">¿Está o no está el Señor con nosotros?</h2>
+      <p>En Refidim no hay agua y el pueblo se encara con Moisés. El desierto quita las caretas: sin las seguridades de antes aparecen la murmuración, la desconfianza, la infidelidad. Es duro, pero es la verdad, y en ella se desmoronan los falsos dioses.</p>
+      <p>Dios no castiga la queja: manda golpear la roca, y de la roca brota agua. El pueblo bebe de lo más duro y seco del paisaje.</p>
+      <p>San Pablo lo dirá sin rodeos: la roca era Cristo. Del costado abierto en la cruz brotan sangre y agua. En la hora de la prueba, cuando la pregunta es si Dios está, él responde dando de beber.</p>
+      <blockquote class="cita">
+        <p>«Golpearás la roca, y saldrá agua para que beba el pueblo. […] Y llamó a aquel lugar Masá y Meribá, […] porque habían tentado al Señor, diciendo: “¿Está o no está el Señor en medio de nosotros?”».</p>
+        <cite>Éxodo 17, 6-7</cite>
+      </blockquote>
+      <p class="eco">«Todos bebieron la misma bebida espiritual, pues bebían de la roca espiritual que los seguía; y la roca era Cristo». <cite>1 Corintios 10, 4</cite></p>
+      <div class="pausa">
+        <p class="pausa__label">Para la oración</p>
+        <p class="pausa__q">¿Qué careta me está quitando el desierto? En mi sequedad, ¿me atrevo a decirle a Dios la verdad de mi desconfianza y a dejar que me dé de beber?</p>
+      </div>
+      <div class="acciones">
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=Éxodo+17%3A1-7&amp;version=BLP" target="_blank" rel="noopener">Leer Éxodo 17, 1-7</a>
+        <button class="btn btn--ghost" data-share="5" type="button">Compartir por WhatsApp</button>
+      </div>
+    </article>
+  </section>
+
+  <div class="tramo" data-cam="travel"><p class="reveal">«Llegaron al desierto del Sinaí y acamparon allí, frente al monte».<cite>Éxodo 19, 2</cite></p></div>
+
+  <!-- ETAPA VI -->
+  <section class="etapa" id="etapa-6" data-cam="station" data-station="5">
+    <div class="etapa__head">
+      <span class="etapa__rn">VI</span>
+      <p class="etapa__lugar">El monte Sinaí</p>
+    </div>
+    <article class="panel">
+      <p class="panel__kicker">Etapa VI · La Alianza y la conversión</p>
+      <h2 class="panel__title">Del miedo del esclavo a la libertad del hijo</h2>
+      <p>Al pie del monte, Dios sella una alianza con su pueblo. Y antes del primer mandamiento pronuncia una palabra de amor: «Yo soy el Señor, tu Dios, que te saqué de Egipto». La ley llega después de la liberación, no antes; no es el precio de la salvación, sino el camino de los que ya han sido salvados.</p>
+      <p>Convertirse no es portarse bien por miedo al castigo o por interés en el premio: ese es el esquema del esclavo. Es pasar a ser hijo; obedecer por amor, con la gratitud de quien se sabe perdonado.</p>
+      <p>Por eso la conversión no es un esfuerzo de voluntad, sino un corazón nuevo. Lo que en el Sinaí se escribió en tablas de piedra, el Espíritu lo escribe en el corazón.</p>
+      <blockquote class="cita">
+        <p>«Habéis visto lo que he hecho con los egipcios, y cómo os he llevado sobre alas de águila y os he traído a mí. Ahora, pues, si de veras escucháis mi voz y guardáis mi alianza, seréis mi propiedad personal entre todos los pueblos».</p>
+        <cite>Éxodo 19, 4-5</cite>
+      </blockquote>
+      <p class="eco">«No habéis recibido un espíritu de esclavitud, para recaer en el temor, sino un Espíritu de hijos de adopción, en el que clamamos: “¡Abba, Padre!”». <cite>Romanos 8, 15</cite></p>
+      <div class="pausa">
+        <p class="pausa__label">Para la oración</p>
+        <p class="pausa__q">¿Vivo mi fe como un esclavo que teme o como un hijo que se sabe querido? ¿Qué mandamiento me cuesta porque aún no he descubierto el amor que hay detrás?</p>
+      </div>
+      <div class="acciones">
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=Éxodo+19-20&amp;version=BLP" target="_blank" rel="noopener">Leer Éxodo 19-20</a>
+        <button class="btn btn--ghost" data-share="6" type="button">Compartir por WhatsApp</button>
+      </div>
+    </article>
+  </section>
+
+  <div class="tramo" data-cam="travel"><p class="reveal">«Se encaminaron hacia el mar Rojo, rodeando el territorio de Edom. El pueblo se cansó de caminar».<cite>Números 21, 4</cite></p></div>
+
+  <!-- ETAPA VII -->
+  <section class="etapa" id="etapa-7" data-cam="station" data-station="6">
+    <div class="etapa__head">
+      <span class="etapa__rn">VII</span>
+      <p class="etapa__lugar">El camino de Edom</p>
+    </div>
+    <article class="panel">
+      <p class="panel__kicker">Etapa VII · La serpiente de bronce</p>
+      <h2 class="panel__title">Mirar al que fue levantado</h2>
+      <p>Rodeando Edom, el pueblo se agota y vuelve a murmurar. Llegan las serpientes, y su veneno es imagen del pecado: entra sin ruido y mata por dentro. Nadie se cura a sí mismo de esa mordedura.</p>
+      <p>Dios no retira las serpientes. Pide a Moisés que haga una de bronce y la levante en un estandarte: quien la mira, vive. La salvación no está en el esfuerzo, sino en una mirada de fe.</p>
+      <p>Jesús se aplicó esta imagen a sí mismo: él sería levantado en la cruz para que todo el que crea tenga vida eterna. Ahí está otra vez el corazón del anuncio: un don que solo hay que acoger.</p>
+      <blockquote class="cita">
+        <p>«Haz una serpiente y colócala en un estandarte: los mordidos de serpientes quedarán sanos al mirarla».</p>
+        <cite>Números 21, 8</cite>
+      </blockquote>
+      <p class="eco">«Lo mismo que Moisés elevó la serpiente en el desierto, así es necesario que sea elevado el Hijo del hombre, para que todo el que cree en él tenga vida eterna». <cite>Juan 3, 14-15</cite></p>
+      <div class="pausa">
+        <p class="pausa__label">Para la oración</p>
+        <p class="pausa__q">¿Qué mordedura llevo dentro que intento curar yo solo? ¿Cuándo fue la última vez que me quedé, sin más, mirando un crucifijo?</p>
+      </div>
+      <div class="acciones">
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=Números+21%3A4-9&amp;version=BLP" target="_blank" rel="noopener">Leer Números 21, 4-9</a>
+        <button class="btn btn--ghost" data-share="7" type="button">Compartir por WhatsApp</button>
+      </div>
+    </article>
+  </section>
+
+  <div class="tramo" data-cam="travel"><p class="reveal">«Moisés subió de la estepa de Moab al monte Nebo».<cite>Deuteronomio 34, 1</cite></p></div>
+
+  <!-- ETAPA VIII -->
+  <section class="etapa" id="etapa-8" data-cam="station" data-station="7">
+    <div class="etapa__head">
+      <span class="etapa__rn">VIII</span>
+      <p class="etapa__lugar">El monte Nebo</p>
+    </div>
+    <article class="panel">
+      <p class="panel__kicker">Etapa VIII · La madurez de la fe</p>
+      <h2 class="panel__title">Ver la tierra desde lo alto</h2>
+      <p>Cuarenta años después, Moisés sube al Nebo. Desde la cima contempla la tierra prometida. Mira atrás y reconoce el camino: cada tropiezo, cada murmuración, cada vez que Dios abrió paso donde no lo había.</p>
+      <p>Un cristiano adulto no es el que cumple normas por inercia, sino el que ha hecho la experiencia de la cruz y de la resurrección en su propia historia. Ya puede mirar su vida entera —también lo que dolió— como historia de salvación.</p>
+      <p>Moisés muere en el monte, frente a la promesa. Su muerte no es una derrota: quien ha conocido al Dios que vence a la muerte puede vivir y morir sin miedo, saludando de lejos lo que espera.</p>
+      <blockquote class="cita">
+        <p>«Esta es la tierra que prometí a Abrahán, a Isaac y a Jacob […]. Te la he hecho ver con tus propios ojos, pero no entrarás en ella».</p>
+        <cite>Deuteronomio 34, 4</cite>
+      </blockquote>
+      <p class="eco">«Con fe murieron todos estos, sin haber recibido las promesas, sino viéndolas y saludándolas de lejos». <cite>Hebreos 11, 13</cite></p>
+      <div class="pausa">
+        <p class="pausa__label">Para la oración</p>
+        <p class="pausa__q">Si subiera hoy a mi propio monte Nebo, ¿qué pasos de Dios reconocería en mi historia? ¿Qué miedo a la muerte o al futuro le entrego?</p>
+      </div>
+      <div class="acciones">
+        <a class="btn" href="https://www.biblegateway.com/passage/?search=Deuteronomio+34&amp;version=BLP" target="_blank" rel="noopener">Leer Deuteronomio 34</a>
+        <button class="btn btn--ghost" data-share="8" type="button">Compartir por WhatsApp</button>
+      </div>
+    </article>
+  </section>
+
+  <div class="tramo" data-cam="travel"><p class="reveal">«Todo Israel fue pasando por el cauce seco, hasta que el pueblo terminó de pasar el Jordán».<cite>Josué 3, 17</cite></p></div>
+
+  <!-- ETAPA IX -->
+  <section class="etapa" id="etapa-9" data-cam="station" data-station="8">
+    <div class="etapa__head">
+      <span class="etapa__rn">IX</span>
+      <p class="etapa__lugar">Jericó · La Tierra Prometida</p>
+    </div>
+    <article class="panel">
+      <p class="panel__kicker">Etapa IX · La comunidad y la Iglesia</p>
       <h2 class="panel__title">«Mirad cómo se aman»</h2>
       <p>La tierra prometida no es un lugar para vivir solo. En una sociedad masificada y aislada, la fe necesita encarnarse en un pequeño grupo de hermanos, como aquellas primeras comunidades que hacían decir a los paganos: «Mirad cómo se aman».</p>
       <p>Son hermanos que no hemos elegido por afinidad, sino que Dios nos da. Con el tiempo salen a la luz los defectos de cada uno y se rompe la imagen ideal que teníamos de nosotros y de los demás. Justo ahí empieza lo bueno: ser conocido en la propia miseria y, aun así, ser amado y perdonado.</p>
+      <p>Esa comunidad no vive al margen: nace y crece en la parroquia, en comunión con el obispo, y se alimenta de la Palabra y de la Eucaristía del domingo. Así la parroquia se vuelve un tejido de comunidades vivas.</p>
       <p>La comunidad es un taller de perdón, y la Iglesia, la casa donde el amor al enemigo se vuelve posible. Ese es el fruto del paso: una vida sin miedo a la muerte que ya anticipa el Reino.</p>
       <blockquote class="cita">
         <p>«Ved qué dulzura, qué delicia, convivir los hermanos unidos».</p>
@@ -174,12 +331,12 @@
       </div>
       <div class="acciones">
         <a class="btn" href="https://www.biblegateway.com/passage/?search=Hechos+2%3A42-47&amp;version=BLP" target="_blank" rel="noopener">Leer Hechos 2, 42-47</a>
-        <button class="btn btn--ghost" data-share="4" type="button">Compartir por WhatsApp</button>
+        <button class="btn btn--ghost" data-share="9" type="button">Compartir por WhatsApp</button>
       </div>
     </article>
   </section>
 
-  <div class="tramo" data-cam="travel"><p class="reveal">«Todo Israel fue pasando por el cauce seco, hasta que el pueblo terminó de pasar el Jordán».<cite>Josué 3, 17</cite></p></div>
+  <div class="tramo" data-cam="travel"><p class="reveal">«Cuando comenzaron a comer de los productos de la tierra, cesó el maná».<cite>Josué 5, 12</cite></p></div>
 
   <!-- FINAL -->
   <section class="final" id="final" data-cam="end">
@@ -187,13 +344,20 @@
       <p class="eyebrow reveal">Pascua</p>
       <h2 class="final__title reveal">El paso continúa</h2>
       <p class="reveal">El camino de Israel es también el tuyo. Cada vez que algo te esclaviza, cada vez que el mar parece cerrado, cada vez que el desierto te desnuda, Dios vuelve a abrir el paso. Y al otro lado te esperan unos hermanos.</p>
+      <p class="reveal">Pero la tierra no es un refugio. Quien ha experimentado el amor gratuito de Dios se convierte en testigo, dispuesto a ir allí donde la Iglesia lo necesite.</p>
+      <blockquote class="cita cita--final reveal"><p>«Estad siempre prontos para dar explicación a todo el que os pida una razón de vuestra esperanza».</p><cite>1 Pedro 3, 15</cite></blockquote>
       <figure class="final__mapa reveal">
-        <svg viewBox="0 0 200 200" class="mapa-svg" role="img" aria-labelledby="mapa-t"><title id="mapa-t">Mapa ilustrado del Éxodo con las cuatro etapas</title><use href="#mapa"/></svg>
+        <svg viewBox="0 0 200 200" class="mapa-svg" role="img" aria-labelledby="mapa-t"><title id="mapa-t">Mapa ilustrado del Éxodo con las nueve etapas</title><use href="#mapa"/></svg>
         <ol class="final__index">
-          <li><a href="#etapa-1"><span class="rn">I</span> Egipto · La buena noticia</a></li>
-          <li><a href="#etapa-2"><span class="rn">II</span> Mar Rojo · La cruz</a></li>
-          <li><a href="#etapa-3"><span class="rn">III</span> Desierto · La conversión</a></li>
-          <li><a href="#etapa-4"><span class="rn">IV</span> Tierra · La comunidad</a></li>
+          <li><a href="#etapa-1"><span class="rn">I</span> Egipto · <em>La esclavitud y la buena noticia</em></a></li>
+          <li><a href="#etapa-2"><span class="rn">II</span> Mar Rojo · <em>El paso por el mar</em></a></li>
+          <li><a href="#etapa-3"><span class="rn">III</span> Mara · <em>El sufrimiento y la cruz</em></a></li>
+          <li><a href="#etapa-4"><span class="rn">IV</span> El maná · <em>El maná de cada día</em></a></li>
+          <li><a href="#etapa-5"><span class="rn">V</span> Refidim · <em>La prueba del desierto</em></a></li>
+          <li><a href="#etapa-6"><span class="rn">VI</span> Sinaí · <em>La Alianza y la conversión</em></a></li>
+          <li><a href="#etapa-7"><span class="rn">VII</span> La serpiente · <em>La serpiente de bronce</em></a></li>
+          <li><a href="#etapa-8"><span class="rn">VIII</span> Nebo · <em>La madurez de la fe</em></a></li>
+          <li><a href="#etapa-9"><span class="rn">IX</span> La tierra · <em>La comunidad y la Iglesia</em></a></li>
         </ol>
       </figure>
       <div class="acciones acciones--center">
@@ -205,7 +369,6 @@
 </main>
 
 <footer class="pie">
-  <p class="pie__firma">Parroquia de Santa Casilda · Carabanchel, Madrid</p>
   <p>Itinerario de reflexión personal sobre los grandes temas del anuncio cristiano. Textos bíblicos: Sagrada Biblia, versión oficial de la Conferencia Episcopal Española.</p>
 </footer>
 
@@ -222,7 +385,7 @@
       <g font-family="Source Serif 4, Georgia, serif" font-size="6" fill="#A89F8C" font-style="italic">
         <text x="20" y="22">Mar Grande</text>
         <text x="8" y="110">Egipto</text>
-        <text x="104" y="128">Sinaí</text>
+        <text x="122" y="182">Sinaí</text>
         <text x="160" y="96">Edom</text>
         <text x="150" y="22">Canaán</text>
         <text x="122" y="196">Mar Rojo</text>

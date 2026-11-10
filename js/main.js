@@ -30,11 +30,17 @@ const ROUTE_2D = [
   [7.6, -6.3],   // vado del Jordán
   [6.9, -6.35],  // IV · Jericó
 ];
+// lab: desplazamiento de la etiqueta en el mapa SVG
 const STATIONS = [
-  { i: 0, xz: [-6.0, -4.5], rn: 'I', name: 'Egipto' },
-  { i: 4, xz: [-2.88, -1.66], rn: 'II', name: 'Mar Rojo' },
-  { i: 9, xz: [1.4, 5.6], rn: 'III', name: 'Sinaí' },
-  { i: 18, xz: [6.9, -6.35], rn: 'IV', name: 'Jericó' },
+  { i: 0, xz: [-6.0, -4.5], rn: 'I', name: 'Egipto', lab: [0, -7] },
+  { i: 4, xz: [-2.88, -1.66], rn: 'II', name: 'Mar Rojo', lab: [-10, 3] },
+  { i: 6, xz: [-1.6, 0.4], rn: 'III', name: 'Mara', lab: [-11, 3] },
+  { i: 7, xz: [-0.8, 2.8], rn: 'IV', name: 'Sin', lab: [-10, 3] },
+  { i: 8, xz: [0.3, 4.6], rn: 'V', name: 'Refidim', lab: [-9, 4] },
+  { i: 9, xz: [1.4, 5.6], rn: 'VI', name: 'Sinaí', lab: [0, 13] },
+  { i: 14, xz: [6.9, -2.9], rn: 'VII', name: 'Edom', lab: [0, 13] },
+  { i: 16, xz: [8.45, -5.6], rn: 'VIII', name: 'Nebo', lab: [1, 13] },
+  { i: 18, xz: [6.9, -6.35], rn: 'IX', name: 'Jericó', lab: [-10, -3] },
 ];
 const CROSS = new THREE.Vector2(-2.88, -1.66);
 const GULF_D = new THREE.Vector2(4, 10.5).normalize();      // eje del golfo de Suez
@@ -80,7 +86,7 @@ function heightCore(x, z) {
   const n = fbm(x * .7, z * .7);
   let h = Math.min(l, .25) * .3 + k * (.04 + n * .16);
   const ridge = 1 - Math.abs(fbm(x * 1.6 + 7, z * 1.6) * 2 - 1);
-  h += k * gauss(x, z, 1.4, 5.8, 1.5) * (0.8 + ridge * .7);   // macizo del Sinaí
+  h += k * gauss(x, z, 1.4, 5.8, 1.4) * (0.55 + ridge * .5);   // macizo del Sinaí
   h += k * gauss(x, z, 0.2, 3.2, 1.3) * .35;
   h += k * gauss(x, z, 6.2, -7.4, 1.1) * .55;                 // montes de Judá
   h += k * Math.exp(-((x - 8.9) ** 2) / .7) * smooth(-9, -6, z) * (1 - smooth(-1, 1, z)) * (.55 + ridge * .35); // Moab y Edom
@@ -132,8 +138,7 @@ const stationU = STATIONS.map(s => {
   const g = document.getElementById('st-svg');
   if (g) g.innerHTML = STATIONS.map(s => {
     const cx = s.xz[0] * 10 + 100, cy = s.xz[1] * 10 + 100;
-    const ty = s.rn === 'III' ? cy + 14 : cy - 7;
-    return `<circle cx="${cx}" cy="${cy}" r="3.6" fill="#C9A35B"/><text x="${cx}" y="${ty}">${s.rn}</text>`;
+    return `<circle cx="${cx}" cy="${cy}" r="3.2" fill="#C9A35B"/><text x="${cx + s.lab[0]}" y="${cy + s.lab[1]}">${s.rn}</text>`;
   }).join('');
 })();
 
@@ -145,27 +150,31 @@ requestAnimationFrame(() => document.body.classList.add('is-loaded'));
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -12% 0px' });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-const dots = [...document.querySelectorAll('[data-dot]')];
-const navIO = new IntersectionObserver(es => es.forEach(e => {
-  if (!e.isIntersecting) return;
-  const n = e.target.id.split('-')[1];
-  dots.forEach(a => a.classList.toggle('is-active', a.dataset.dot === n));
-}), { rootMargin: '-45% 0px -45% 0px' });
-document.querySelectorAll('.etapa').forEach(s => navIO.observe(s));
-const clearIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) dots.forEach(a => a.classList.remove('is-active')); }), { rootMargin: '-45% 0px -45% 0px' });
-['inicio', 'prologo', 'final'].forEach(id => { const el = document.getElementById(id); if (el) clearIO.observe(el); });
+// Menú de etapas
+const menuBtn = document.querySelector('.top__btn'), menu = document.getElementById('menu-etapas'), curEl = document.getElementById('etapa-actual');
+const setMenu = open => { menuBtn.setAttribute('aria-expanded', open); menu.hidden = !open; document.body.classList.toggle('menu-open', open); };
+menuBtn.addEventListener('click', () => setMenu(menu.hidden));
+menu.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden) { setMenu(false); menuBtn.focus(); } });
 
-const SHARE = [
-  'El paso · De Egipto a la Tierra Prometida. Un itinerario de fe en cuatro etapas',
-  'El paso · I. Egipto: una buena noticia para el esclavo',
-  'El paso · II. El mar Rojo: la cruz, un camino abierto en el mar',
-  'El paso · III. El desierto: del miedo del esclavo a la libertad del hijo',
-  'El paso · IV. La Tierra Prometida: «Mirad cómo se aman»',
-];
+const dots = [...document.querySelectorAll('[data-dot]')];
+const etapas = [...document.querySelectorAll('.etapa')];
+const markActive = n => {
+  dots.forEach(a => a.classList.toggle('is-active', a.dataset.dot === n));
+  if (n) { const e = etapas[+n - 1]; curEl.textContent = e.querySelector('.etapa__rn').textContent + ' · ' + dots[+n - 1].querySelector('.nm').textContent; }
+  else curEl.textContent = 'Etapas';
+};
+const navIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) markActive(e.target.id.startsWith('etapa-') ? e.target.id.split('-')[1] : null); }), { rootMargin: '-45% 0px -45% 0px' });
+etapas.forEach(s => navIO.observe(s));
+['inicio', 'prologo', 'final'].forEach(id => { const el = document.getElementById(id); if (el) navIO.observe(el); });
+
+// Compartir por WhatsApp (el texto sale del propio título de cada etapa)
 document.querySelectorAll('[data-share]').forEach(b => b.addEventListener('click', () => {
   const n = +b.dataset.share;
+  let txt = 'El paso · De Egipto a la Tierra Prometida. Un itinerario de fe en nueve etapas';
+  if (n) { const e = etapas[n - 1]; txt = `El paso · ${e.querySelector('.etapa__rn').textContent}. ${e.querySelector('.etapa__lugar').textContent}: ${e.querySelector('.panel__title').textContent}`; }
   const url = location.href.split('#')[0] + (n ? '#etapa-' + n : '');
-  window.open('https://wa.me/?text=' + encodeURIComponent(SHARE[n] + '\n' + url), '_blank', 'noopener');
+  window.open('https://wa.me/?text=' + encodeURIComponent(txt + '\n' + url), '_blank', 'noopener');
 }));
 
 /* ------------------------------------------------------------------ */
@@ -413,7 +422,7 @@ function initScene() {
     route.getPointAt(u, vA);
     route.getTangentAt(Math.min(u + .001, 1), vT); vT.y = 0; vT.normalize();
     const nearII = Math.exp(-((u - stationU[1]) ** 2) / (2 * .02 ** 2));
-    const hgt = 4.4 - 2.5 * nearII * cur.part, back = 4.2 - 1.2 * nearII * cur.part;
+    const hgt = 5.6 - 3.7 * nearII * cur.part, back = 3.4 - 0.4 * nearII * cur.part;
     const side = new THREE.Vector3(-vT.z, 0, vT.x);
     camFol.copy(vA).addScaledVector(vT, -back).addScaledVector(side, .9 * (1 - nearII)).add(vB.set(0, hgt, 0));
     if (!reduceMotion) camFol.y += Math.sin(t * .4) * .05;
