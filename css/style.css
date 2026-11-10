@@ -178,3 +178,19 @@ main{position:relative;z-index:1}
 .final__index a{display:grid;grid-template-columns:2.8rem 1fr;align-items:baseline;column-gap:var(--space-1)}
 .final__index em{grid-column:2;margin:0;line-height:1.3}
 .final__index em{margin-top:-.15rem}
+
+/* ---------- Segunda parte ---------- */
+.parte{min-height:110svh;display:flex;align-items:center;padding:var(--space-6) var(--gutter)}
+.parte__inner{max-width:40rem;margin:0 auto;background:var(--panel);padding:var(--space-5) var(--space-3);border-top:1px solid var(--line-gold);border-bottom:1px solid var(--line-gold);text-align:center}
+.parte__title{font-family:var(--font-display);font-weight:400;font-size:clamp(3rem,11vw,7rem);line-height:.9;letter-spacing:-.02em;margin:0}
+.parte__sub{font-family:var(--font-display);font-style:italic;font-size:clamp(1.4rem,4vw,2.2rem);color:var(--accent);margin:var(--space-2) 0 var(--space-4)}
+.parte__inner>p:not(.eyebrow):not(.parte__sub){max-width:34rem;margin:0 auto var(--space-3)}
+.cumple{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:0 0 var(--space-3)}
+.cumple__label{width:100%;font-size:var(--step-small);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.cumple a{display:inline-flex;align-items:center;gap:.4rem;min-height:40px;padding:0 .8rem;border:1px solid var(--line-gold);text-decoration:none;font-family:var(--font-display);font-size:1.05rem;transition:background var(--dur-micro) var(--ease-out)}
+.cumple a .rn{color:var(--accent);font-weight:600}
+.cumple a:hover{background:color-mix(in srgb,var(--accent) 14%,transparent)}
+.top__grp,.final__grp{margin:var(--space-3) auto var(--space-1);max-width:40rem;font-size:var(--step-small);letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.final__grp{text-align:left}
+.final__grp:first-child{margin-top:0}
+.final__pregunta{font-family:var(--font-display);font-style:italic;font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.25;color:var(--accent)}

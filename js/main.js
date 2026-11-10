@@ -28,19 +28,48 @@ const ROUTE_2D = [
   [8.6, -4.0],   // Moab
   [8.45, -5.6],  // Nebo
   [7.6, -6.3],   // vado del Jordán
-  [6.9, -6.35],  // IV · Jericó
+  [6.9, -6.35],  // IX · Jericó
+  // Segunda parte · El nuevo Éxodo
+  [7.2, -6.3],
+  [7.5, -6.15],  // X · Betania del Jordán
+  [7.15, -5.75],
+  [6.7, -5.4],   // XI · Desierto de Judea
+  [6.38, -6.55],
+  [6.3, -7.6],
+  [6.35, -8.4],
+  [6.55, -8.9],  // XII · Monte Tabor
+  [7.15, -8.1],
+  [7.2, -6.95],
+  [6.95, -6.5],  // Jericó (subida a Jerusalén)
+  [6.5, -6.15],
+  [6.16, -5.94], // XIII · Cenáculo
+  [6.13, -6.05], // XIV · Gólgota
+  [6.21, -6.08], // XV · Sepulcro
+  [5.9, -6.2],
+  [5.55, -6.12], // XVI · Emaús
+  [5.85, -5.98],
+  [6.16, -5.93], // XVII · Pentecostés
 ];
 // lab: desplazamiento de la etiqueta en el mapa SVG
+// lab: rótulo en el SVG de respaldo · lift: altura de la etiqueta 3D · ov: visible en la vista general · tag: texto de la etiqueta · zoom: cercanía de la cámara
 const STATIONS = [
-  { i: 0, xz: [-6.0, -4.5], rn: 'I', name: 'Egipto', lab: [0, -7] },
-  { i: 4, xz: [-2.88, -1.66], rn: 'II', name: 'Mar Rojo', lab: [-10, 3] },
-  { i: 6, xz: [-1.6, 0.4], rn: 'III', name: 'Mara', lab: [-11, 3] },
-  { i: 7, xz: [-0.8, 2.8], rn: 'IV', name: 'Sin', lab: [-10, 3] },
-  { i: 8, xz: [0.3, 4.6], rn: 'V', name: 'Refidim', lab: [-9, 4] },
-  { i: 9, xz: [1.4, 5.6], rn: 'VI', name: 'Sinaí', lab: [0, 13] },
-  { i: 14, xz: [6.9, -2.9], rn: 'VII', name: 'Edom', lab: [0, 13] },
-  { i: 16, xz: [8.45, -5.6], rn: 'VIII', name: 'Nebo', lab: [1, 13] },
-  { i: 18, xz: [6.9, -6.35], rn: 'IX', name: 'Jericó', lab: [-10, -3] },
+  { xz: [-6.0, -4.5], rn: 'I', name: 'Egipto', lab: [0, -7] },
+  { xz: [-2.88, -1.66], rn: 'II', name: 'Mar Rojo', lab: [-10, 3] },
+  { xz: [-1.6, 0.4], rn: 'III', name: 'Mara', lab: [-11, 3] },
+  { xz: [-0.8, 2.8], rn: 'IV', name: 'Sin', lab: [-10, 3] },
+  { xz: [0.3, 4.6], rn: 'V', name: 'Refidim', lab: [-9, 4] },
+  { xz: [1.4, 5.6], rn: 'VI', name: 'Sinaí', lab: [0, 13] },
+  { xz: [6.9, -2.9], rn: 'VII', name: 'Edom', lab: [0, 13] },
+  { xz: [8.45, -5.6], rn: 'VIII', name: 'Nebo', lab: [2, 13], lift: 1.0 },
+  { xz: [6.9, -6.35], rn: 'IX', name: 'Jericó', lab: [-2, 12], lift: 1.2 },
+  { xz: [7.5, -6.15], rn: 'X', name: 'Jordán', lab: [9, -2], lift: 2.9, zoom: .7, hero: false },
+  { xz: [6.7, -5.4], rn: 'XI', name: 'Judea', lab: [0, 12], lift: 1.0, zoom: .75, hero: false },
+  { xz: [6.55, -8.9], rn: 'XII', name: 'Tabor', lab: [-9, 3], zoom: .75, hero: false },
+  { xz: [6.16, -5.94], rn: 'XIII', name: 'Cenáculo', lab: [-9, -6], tag: 'XIII–XV', heroTag: 'X–XVII', lift: 2.8, zoom: .5 },
+  { xz: [6.13, -6.05], rn: 'XIV', name: 'Gólgota', ov: false, zoom: .45 },
+  { xz: [6.21, -6.08], rn: 'XV', name: 'Sepulcro', ov: false, zoom: .45 },
+  { xz: [5.55, -6.12], rn: 'XVI', name: 'Emaús', lab: [-11, 3], lift: 1.0, zoom: .6, hero: false },
+  { xz: [6.16, -5.93], rn: 'XVII', name: 'Pentecostés', ov: false, zoom: .5 },
 ];
 const CROSS = new THREE.Vector2(-2.88, -1.66);
 const GULF_D = new THREE.Vector2(4, 10.5).normalize();      // eje del golfo de Suez
@@ -94,6 +123,7 @@ function heightCore(x, z) {
   h += k * gauss(x, z, 6.2, -7.4, 1.1) * .55;                 // montes de Judá
   h += k * Math.exp(-((x - 8.9) ** 2) / .7) * smooth(-9, -6, z) * (1 - smooth(-1, 1, z)) * (.55 + ridge * .35); // Moab y Edom
   h += k * gauss(x, z, 3.5, -2, 2.4) * .18;                   // Négueb
+  h += k * gauss(x, z, 6.55, -8.9, .28) * .55;                // monte Tabor
   return h;
 }
 
@@ -101,15 +131,18 @@ function heightCore(x, z) {
 /* Ruta (compartida por el 3D y el mapa SVG)                           */
 /* ------------------------------------------------------------------ */
 const route2 = new THREE.CatmullRomCurve3(ROUTE_2D.map(([x, z]) => new THREE.Vector3(x, 0, z)), false, 'centripetal');
-const SAMPLES = 420;
+const SAMPLES = 1100;
 const samples = route2.getSpacedPoints(SAMPLES).map(p => {
   const h = height(p.x, p.z);
   return new THREE.Vector3(p.x, h + .035, p.z);
 });
 const route = new THREE.CatmullRomCurve3(samples);
+// búsqueda en orden: Jerusalén y Jericó se visitan dos veces
+let lastK = -1;
 const stationU = STATIONS.map(s => {
-  let best = 0, bd = 1e9;
-  samples.forEach((p, k) => { const d = Math.hypot(p.x - s.xz[0], p.z - s.xz[1]); if (d < bd) { bd = d; best = k; } });
+  let best = lastK + 1, bd = 1e9;
+  for (let k = lastK + 1; k < samples.length; k++) { const d = Math.hypot(samples[k].x - s.xz[0], samples[k].z - s.xz[1]); if (d < bd - 1e-6) { bd = d; best = k; } }
+  lastK = best;
   return best / SAMPLES;
 });
 
@@ -171,7 +204,7 @@ function paintAtlas(N, G) {
     const sp = (o.spacing || 0) * size * U;
     const chars = [...str], widths = chars.map(ch => ctx.measureText(ch).width);
     const total = widths.reduce((a, b) => a + b, 0) + sp * (chars.length - 1);
-    let cx = o.align === 'left' ? 0 : -total / 2;
+    let cx = o.align === 'left' ? 0 : o.align === 'right' ? -total : -total / 2;
     ctx.textBaseline = 'middle';
     ctx.lineJoin = 'round';
     chars.forEach((ch, k) => {
@@ -199,24 +232,30 @@ function paintAtlas(N, G) {
   txt('NÉGUEB', 4.6, -4.4, .36, { spacing: .55, color: REG });
   txt('EDOM', 8.4, -1.4, .36, { spacing: .55, color: REG, rot: Math.PI / 2 });
   txt('MOAB', 9.7, -5.4, .32, { spacing: .5, color: REG, rot: Math.PI / 2 });
-  txt('CANAÁN', 5.2, -8.7, .4, { spacing: .6, color: REG });
+  txt('CANAÁN', 5.55, -7.45, .34, { spacing: .6, color: REG });
+  txt('GALILEA', 5.6, -9.4, .24, { spacing: .5, color: REG });
+  txt('JUDEA', 5.2, -5.25, .24, { spacing: .5, color: REG });
+  txt('Mar de Galilea', 7.75, -9.35, .14, { italic: true, color: SEA, align: 'left' });
   txt('ARABIA', 8.7, 5.5, .46, { spacing: .7, color: REG });
   // ciudades y lugares
   const towns = [
     ['Ramsés', -6.0, -4.5, 'r'], ['Sucot', -5.0, -3.9, 'r'], ['Menfis', -6.75, -3.2, 'l'], ['Mara', -1.6, .4, 'r'], ['Elim', -.8, 2.8, 'r'],
     ['Refidim', .3, 4.6, 'r'], ['Cades', 2.6, -3.0, 'r'], ['Punón', 6.9, -2.9, 'l'], ['Ezión-Guéber', 4.35, 1.2, 'r'],
-    ['Gaza', 3.5, -6.55, 'r'], ['Jerusalén', 6.2, -6.0, 'l'], ['Jericó', 6.9, -6.35, 'l'], ['Monte Nebo', 8.45, -5.6, 'r'],
+    ['Gaza', 3.5, -6.55, 'r'], ['Jerusalén', 6.17, -6.0, 'r'], ['Jericó', 6.9, -6.35, 'r'], ['Monte Nebo', 8.45, -5.6, 'r'],
+    ['Emaús', 5.55, -6.12, 'l'], ['Nazaret', 6.1, -9.25, 'l'], ['Betania', 7.5, -6.15, 'r'],
   ];
   towns.forEach(([n, x, z, side]) => {
     ctx.fillStyle = '#9b2a1c'; ctx.strokeStyle = 'rgba(240,230,200,.8)'; ctx.lineWidth = U * .02;
     ctx.beginPath(); ctx.arc(PX(x), PZ(z), U * .055, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
-    txt(n, x + (side === 'r' ? .12 : -.12), z - .16, .22, { italic: true, color: TOWN, align: 'left', halo: HALO, ...(side === 'l' ? {} : {}) });
-    if (side === 'l') { /* rótulo a la izquierda */ }
+    txt(n, x + (side === 'r' ? .12 : -.12), z - .16, .22, { italic: true, color: TOWN, align: side === 'r' ? 'left' : 'right', halo: HALO });
   });
   // Monte Sinaí: triángulo
   ctx.fillStyle = '#7a2a1c'; ctx.beginPath();
   ctx.moveTo(PX(1.4), PZ(5.6) - U * .16); ctx.lineTo(PX(1.4) - U * .12, PZ(5.6) + U * .06); ctx.lineTo(PX(1.4) + U * .12, PZ(5.6) + U * .06); ctx.closePath(); ctx.fill();
   txt('Monte Sinaí', 1.6, 5.85, .24, { italic: true, color: TOWN, align: 'left', halo: HALO });
+  ctx.fillStyle = '#7a2a1c'; ctx.beginPath();
+  ctx.moveTo(PX(6.55), PZ(-8.9) - U * .13); ctx.lineTo(PX(6.55) - U * .1, PZ(-8.9) + U * .05); ctx.lineTo(PX(6.55) + U * .1, PZ(-8.9) + U * .05); ctx.closePath(); ctx.fill();
+  txt('Monte Tabor', 6.45, -8.75, .18, { italic: true, color: TOWN, align: 'right', halo: HALO });
   // marco
   ctx.strokeStyle = 'rgba(80,52,28,.55)'; ctx.lineWidth = N / 500; ctx.strokeRect(N * .008, N * .008, N * .984, N * .984);
   ctx.lineWidth = N / 1400; ctx.strokeRect(N * .016, N * .016, N * .968, N * .968);
@@ -240,9 +279,9 @@ function paintAtlas(N, G) {
   const hasGL = (() => { try { const t = document.createElement('canvas'); return !!(t.getContext('webgl2') || t.getContext('webgl')); } catch (e) { return false; } })();
   if (!hasGL) { fill(); if (document.fonts) document.fonts.ready.then(fill); }
   const g = document.getElementById('st-svg');
-  if (g) g.innerHTML = STATIONS.map(s => {
+  if (g) g.innerHTML = STATIONS.filter(s => s.ov !== false).map(s => {
     const cx = s.xz[0] * 10 + 100, cy = s.xz[1] * 10 + 100;
-    return `<circle cx="${cx}" cy="${cy}" r="3.2" fill="#C9A35B" stroke="#3a2614" stroke-width=".8"/><text x="${cx + s.lab[0]}" y="${cy + s.lab[1]}" stroke="#0B0A08" stroke-width="2.4" paint-order="stroke">${s.rn}</text>`;
+    return `<circle cx="${cx}" cy="${cy}" r="3.2" fill="#C9A35B" stroke="#3a2614" stroke-width=".8"/><text x="${cx + s.lab[0]}" y="${cy + s.lab[1]}" stroke="#0B0A08" stroke-width="2.4" paint-order="stroke">${s.tag || s.rn}</text>`;
   }).join('');
 })();
 
@@ -275,7 +314,7 @@ etapas.forEach(s => navIO.observe(s));
 // Compartir por WhatsApp (el texto sale del propio título de cada etapa)
 document.querySelectorAll('[data-share]').forEach(b => b.addEventListener('click', () => {
   const n = +b.dataset.share;
-  let txt = 'El paso · De Egipto a la Tierra Prometida. Un itinerario de fe en nueve etapas';
+  let txt = 'El paso · Del Éxodo a Pentecostés. Un itinerario de fe en diecisiete etapas';
   if (n) { const e = etapas[n - 1]; txt = `El paso · ${e.querySelector('.etapa__rn').textContent}. ${e.querySelector('.etapa__lugar').textContent}: ${e.querySelector('.panel__title').textContent}`; }
   const url = location.href.split('#')[0] + (n ? '#etapa-' + n : '');
   window.open('https://wa.me/?text=' + encodeURIComponent(txt + '\n' + url), '_blank', 'noopener');
@@ -382,8 +421,8 @@ function initScene() {
   });
 
   // Ruta dorada
-  const TUBE_SEG = 700, RAD = 6;
-  const tubeGeo = new THREE.TubeGeometry(route, TUBE_SEG, mobile ? .04 : .032, RAD, false);
+  const TUBE_SEG = 1600, RAD = 6;
+  const tubeGeo = new THREE.TubeGeometry(route, TUBE_SEG, mobile ? .026 : .022, RAD, false);
   const tube = new THREE.Mesh(tubeGeo, new THREE.MeshBasicMaterial({ color: '#9b2a1c', fog: true }));
   scene.add(tube);
   const ghostGeo = new THREE.TubeGeometry(route, 300, .012, 4, false);
@@ -404,13 +443,33 @@ function initScene() {
   scene.add(walkerLight);
 
   const stationPts = stationU.map(u => route.getPointAt(u));
+
+  // Jerusalén en miniatura: murallas, torres, la cruz del Gólgota y la cúpula del sepulcro
+  (function jerusalem() {
+    const cx = 6.17, cz = -6.0, hy = height(cx, cz);
+    const stone = new THREE.MeshStandardMaterial({ color: '#e3d3ae', roughness: .9 });
+    const wall = new THREE.Mesh(new THREE.CylinderGeometry(.2, .2, .06, 28, 1, true), stone);
+    stone.side = THREE.DoubleSide;
+    wall.position.set(cx, hy + .03, cz); scene.add(wall);
+    for (let k = 0; k < 8; k++) {
+      const a = k / 8 * Math.PI * 2, t = new THREE.Mesh(new THREE.CylinderGeometry(.026, .03, .1, 8), stone);
+      t.position.set(cx + Math.cos(a) * .2, hy + .05, cz + Math.sin(a) * .2); scene.add(t);
+    }
+    const g = STATIONS[13].xz, gy = height(g[0], g[1]);
+    const wood = new THREE.MeshStandardMaterial({ color: '#5a3a22', roughness: .8 });
+    const v = new THREE.Mesh(new THREE.BoxGeometry(.012, .13, .012), wood); v.position.set(g[0], gy + .1, g[1]); scene.add(v);
+    const h = new THREE.Mesh(new THREE.BoxGeometry(.07, .012, .012), wood); h.position.set(g[0], gy + .135, g[1]); scene.add(h);
+    const se = STATIONS[14].xz, sy = height(se[0], se[1]);
+    const dome = new THREE.Mesh(new THREE.SphereGeometry(.035, 16, 8, 0, Math.PI * 2, 0, Math.PI / 2), stone);
+    dome.position.set(se[0], sy + .01, se[1]); scene.add(dome);
+  })();
   const beamMat = new THREE.MeshBasicMaterial({ color: '#f0cf8a', transparent: true, opacity: .5, depthWrite: false });
   stationPts.forEach(p => {
     const beam = new THREE.Mesh(new THREE.CylinderGeometry(.015, .015, 1.4, 6, 1, true), beamMat);
     beam.position.set(p.x, p.y + .7, p.z);
     scene.add(beam);
     const halo = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: .8 }));
-    halo.position.set(p.x, p.y + .08, p.z); halo.scale.setScalar(.42);
+    halo.position.set(p.x, p.y + .08, p.z); halo.scale.setScalar(.3);
     scene.add(halo);
   });
 
@@ -418,8 +477,8 @@ function initScene() {
   const labelsEl = document.getElementById('labels');
   const labels = STATIONS.map((s, k) => {
     const el = document.createElement('div'); el.className = 'lbl';
-    el.innerHTML = `<b>${s.rn}</b>`;
-    labelsEl.appendChild(el); return { el, p: stationPts[k].clone().add(new THREE.Vector3(0, 1.45, 0)) };
+    el.innerHTML = `<b>${s.heroTag || s.tag || s.rn}</b>`; if (s.ov === false || s.hero === false) el.style.display = 'none';
+    labelsEl.appendChild(el); return { el, p: stationPts[k].clone().add(new THREE.Vector3(0, s.lift || 1.45, 0)) };
   });
 
   /* ---------- Cámara guiada por el scroll ---------- */
@@ -432,6 +491,7 @@ function initScene() {
       const r = el.getBoundingClientRect(), top = r.top + y0, bot = r.bottom + y0;
       let st;
       if (type === 'overview') st = { u: 0, w: 0 };
+      else if (type === 'lift') st = { u: stationU[8], w: .45 };
       else if (type === 'end') st = { u: 1, w: 0 };
       else st = { u: stationU[+el.dataset.station], w: 1 };
       const a = top - vh * .1, b = Math.max(a, bot - vh * .9);
@@ -490,12 +550,14 @@ function initScene() {
     route.getPointAt(u, vA);
     route.getTangentAt(Math.min(u + .001, 1), vT); vT.y = 0; vT.normalize();
     const nearII = Math.exp(-((u - stationU[1]) ** 2) / (2 * .02 ** 2));
-    const port = aspect < 1 ? 1.45 : 1;
+    let zw = .04, zs = .04;
+    STATIONS.forEach((st, i) => { const g = Math.exp(-((u - stationU[i]) ** 2) / (2 * .012 ** 2)); zw += g; zs += g * (st.zoom || 1); });
+    const zoomK = zs / zw, port = (aspect < 1 ? 1.45 : 1) * zoomK;
     const hgt = (7.2 - 5.0 * nearII * cur.part) * port, back = (4.6 - 1.4 * nearII * cur.part) * port;
     const side = new THREE.Vector3(-vT.z, 0, vT.x);
     camFol.copy(vA).addScaledVector(vT, -back).addScaledVector(side, .9 * (1 - nearII)).add(vB.set(0, hgt, 0));
     if (!reduceMotion) camFol.y += Math.sin(t * .4) * .05;
-    lookFol.copy(vA).addScaledVector(vT, 1.2);
+    lookFol.copy(vA).addScaledVector(vT, 1.2 * zoomK);
 
     const w = smooth(0, 1, cur.w);
     camera.position.lerpVectors(camOver, camFol, w);
@@ -510,7 +572,7 @@ function initScene() {
     walker.position.copy(vA).add(vB.set(0, .12, 0));
     walker.material.opacity = smooth(.02, .2, w + (u > .001 ? .5 : 0)) * (u < .999 ? 1 : .5);
     walkerLight.position.copy(walker.position).add(vB.set(0, .3, 0));
-    walker.scale.setScalar((.32 - .14 * nearII) + Math.sin(t * 2) * .02);
+    walker.scale.setScalar(((.32 - .14 * nearII) + Math.sin(t * 2) * .02) * (.5 + .5 * zoomK));
 
     // Murallas y lecho seco
     bed.material.opacity = cur.part; bed.scale.z = Math.max(cur.part, .001);
@@ -562,7 +624,8 @@ function initScene() {
       const a = document.createElement('a'); a.className = 'm3l'; a.href = '#etapa-' + (k + 1);
       a.setAttribute('aria-label', 'Etapa ' + st.rn + ': ' + st.name);
       a.innerHTML = '<span>' + st.rn + '</span>'; box.appendChild(a);
-      return { a, p: stationPts[k].clone().add(new THREE.Vector3(0, k === 7 ? 1.9 : .9, 0)) };
+      a.innerHTML = '<span>' + (st.tag || st.rn) + '</span>'; if (st.ov === false) a.style.display = 'none';
+      return { a, p: stationPts[k].clone().add(new THREE.Vector3(0, (st.lift || 1.45) * .65, 0)) };
     });
     const pv = new THREE.Vector3();
 

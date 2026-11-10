@@ -1,6 +1,6 @@
 # El paso · De Egipto a la Tierra Prometida
 
-Itinerario de fe en nueve etapas sobre un mapa ilustrado 3D del Éxodo.
+Itinerario de fe en dos partes y diecisiete etapas sobre un mapa 3D en relieve, estilo atlas: el Éxodo de Israel y su cumplimiento en Cristo.
 
 | Etapa | Lugar | Tema |
 |---|---|---|
@@ -14,7 +14,20 @@ Itinerario de fe en nueve etapas sobre un mapa ilustrado 3D del Éxodo.
 | VIII | Monte Nebo | La madurez de la fe y la muerte sin miedo |
 | IX | Jericó | La comunidad y la Iglesia |
 
-Cierre: «El paso continúa» — la misión (1 Pe 3, 15).
+**Segunda parte · El paso continúa (el nuevo Éxodo)**
+
+| Etapa | Lugar | Tema |
+|---|---|---|
+| X | El Jordán · Betania | El Bautismo |
+| XI | Desierto de Judea | Las tentaciones |
+| XII | Monte Tabor | La Transfiguración («su éxodo») |
+| XIII | Jerusalén · Cenáculo | La nueva Pascua |
+| XIV | Jerusalén · Gólgota | La cruz |
+| XV | Jerusalén · Sepulcro | La Resurrección |
+| XVI | Emaús | Palabra y pan |
+| XVII | Jerusalén · Pentecostés | El Espíritu y la misión |
+
+Cada etapa de la segunda parte enlaza con las del Éxodo que cumple. Cierre: «Hasta los confines de la tierra» (Hch 1, 8; 1 Pe 3, 15).
 
 Cada etapa: número romano, texto, cita bíblica (CEE) con eco del Nuevo Testamento, pregunta para la oración, enlace a la lectura y botón de WhatsApp (enlaza a `#etapa-N`).
 
