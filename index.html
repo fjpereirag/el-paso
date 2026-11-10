@@ -347,17 +347,22 @@
       <p class="reveal">Pero la tierra no es un refugio. Quien ha experimentado el amor gratuito de Dios se convierte en testigo, dispuesto a ir allí donde la Iglesia lo necesite.</p>
       <blockquote class="cita cita--final reveal"><p>«Estad siempre prontos para dar explicación a todo el que os pida una razón de vuestra esperanza».</p><cite>1 Pedro 3, 15</cite></blockquote>
       <figure class="final__mapa reveal">
-        <svg viewBox="0 0 200 200" class="mapa-svg" role="img" aria-labelledby="mapa-t"><title id="mapa-t">Mapa ilustrado del Éxodo con las nueve etapas</title><use href="#mapa"/></svg>
+        <div class="mapa3d" id="mapa3d-wrap">
+          <canvas id="mapa3d-final" role="img" aria-label="Mapa 3D del Éxodo con la ruta completa y las nueve etapas. Arrastra para girarlo."></canvas>
+          <div class="mapa3d__labels" id="mapa3d-labels"></div>
+          <svg viewBox="0 0 200 200" class="mapa-svg mapa3d__fallback" role="img" aria-labelledby="mapa-t"><title id="mapa-t">Mapa ilustrado del Éxodo con las nueve etapas</title><use href="#mapa"/></svg>
+          <p class="mapa3d__hint">Arrastra para girar · toca una etapa para ir a ella</p>
+        </div>
         <ol class="final__index">
-          <li><a href="#etapa-1"><span class="rn">I</span> Egipto · <em>La esclavitud y la buena noticia</em></a></li>
-          <li><a href="#etapa-2"><span class="rn">II</span> Mar Rojo · <em>El paso por el mar</em></a></li>
-          <li><a href="#etapa-3"><span class="rn">III</span> Mara · <em>El sufrimiento y la cruz</em></a></li>
-          <li><a href="#etapa-4"><span class="rn">IV</span> El maná · <em>El maná de cada día</em></a></li>
-          <li><a href="#etapa-5"><span class="rn">V</span> Refidim · <em>La prueba del desierto</em></a></li>
-          <li><a href="#etapa-6"><span class="rn">VI</span> Sinaí · <em>La Alianza y la conversión</em></a></li>
-          <li><a href="#etapa-7"><span class="rn">VII</span> La serpiente · <em>La serpiente de bronce</em></a></li>
-          <li><a href="#etapa-8"><span class="rn">VIII</span> Nebo · <em>La madurez de la fe</em></a></li>
-          <li><a href="#etapa-9"><span class="rn">IX</span> La tierra · <em>La comunidad y la Iglesia</em></a></li>
+          <li><a href="#etapa-1"><span class="rn">I</span> <span class="nm">Egipto</span><em>La esclavitud y la buena noticia</em></a></li>
+          <li><a href="#etapa-2"><span class="rn">II</span> <span class="nm">Mar Rojo</span><em>El paso por el mar</em></a></li>
+          <li><a href="#etapa-3"><span class="rn">III</span> <span class="nm">Mara</span><em>El sufrimiento y la cruz</em></a></li>
+          <li><a href="#etapa-4"><span class="rn">IV</span> <span class="nm">El maná</span><em>El maná de cada día</em></a></li>
+          <li><a href="#etapa-5"><span class="rn">V</span> <span class="nm">Refidim</span><em>La prueba del desierto</em></a></li>
+          <li><a href="#etapa-6"><span class="rn">VI</span> <span class="nm">Sinaí</span><em>La Alianza y la conversión</em></a></li>
+          <li><a href="#etapa-7"><span class="rn">VII</span> <span class="nm">La serpiente</span><em>La serpiente de bronce</em></a></li>
+          <li><a href="#etapa-8"><span class="rn">VIII</span> <span class="nm">Nebo</span><em>La madurez de la fe</em></a></li>
+          <li><a href="#etapa-9"><span class="rn">IX</span> <span class="nm">La tierra</span><em>La comunidad y la Iglesia</em></a></li>
         </ol>
       </figure>
       <div class="acciones acciones--center">
@@ -382,14 +387,7 @@
       <!-- Ruta y estaciones (las genera js/main.js con las mismas coordenadas que el 3D) -->
       <path id="ruta-svg" d="" stroke="#C9A35B" stroke-width="1.6" stroke-dasharray="3 3" fill="none"/>
       <g id="st-svg" font-family="Cormorant Garamond, Georgia, serif" font-size="10" font-weight="600" fill="#F2EBDD" text-anchor="middle"></g>
-      <g font-family="Source Serif 4, Georgia, serif" font-size="6" fill="#A89F8C" font-style="italic">
-        <text x="20" y="22">Mar Grande</text>
-        <text x="8" y="110">Egipto</text>
-        <text x="122" y="182">Sinaí</text>
-        <text x="160" y="96">Edom</text>
-        <text x="150" y="22">Canaán</text>
-        <text x="122" y="196">Mar Rojo</text>
-      </g>
+
     </symbol>
   </defs>
 </svg>
